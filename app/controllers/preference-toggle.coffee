@@ -21,16 +21,16 @@ class PreferenceToggle extends BaseController
 
     unless typeof @key is 'string' then return new TypeError 'Preference key must be provided and be a string.'
 
-    @state = (User.current?.preferences?[@key] is "true")
-    @updateUi()
+    @state = User.current?.preferences?[@key] is "true"
+    @refresh()
 
   onChangePreference: =>
     @state = !@state
-    @updateUi()
+    @refresh()
 
     User.current?.setPreference @key, @state, true
 
-  updateUi: =>
+  refresh: =>
     @el.toggleClass CLASS_STATE, @state
     @inputRadio.prop 'checked', @state
 
