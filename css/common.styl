@@ -1,0 +1,38 @@
+$blue = #3bf
+
+#semantic-list
+  list-style: none
+  margin: 0
+  padding: 0
+
+.group
+  margin: 0 auto
+  padding: 0 50px
+  width: 1000px
+
+.columns
+  clearfix()
+
+  .column
+    box-sizing: border-box
+    float: left
+    padding-right: 20px
+
+  &.two
+
+    .column
+      width: 50%
+
+  &.three
+
+    .column
+      width: 33%
+
+a
+  color: $blue
+  text-decoration: none
+
+  &:hover
+    color: darken($blue, 33%)
+    text-decoration: underline
+    

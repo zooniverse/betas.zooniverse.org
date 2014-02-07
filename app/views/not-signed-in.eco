@@ -1,0 +1,2 @@
+<% t = require 't7e' %>
+<%- t 'p', 'site.signInPrompt' %>

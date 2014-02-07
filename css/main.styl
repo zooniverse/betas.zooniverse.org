@@ -1,0 +1,49 @@
+@import "../node_modules/zooniverse/css/zooniverse.css"
+
+@import "common"
+@import "layout"
+@import "sign-in"
+
+.description
+  border-bottom: 1px solid #bbb
+  color: #666
+  margin: 25px 0
+  padding: 25px 0
+  text-align: center
+
+  h1, h2, h3
+    color: #555
+    font-size: 36px
+
+  p
+    line-height: 1.4em
+    margin: 0 auto
+    max-width: 500px
+
+.preference-toggle
+  border-radius: 5px
+  box-sizing: border-box
+  color: #000
+  display: inline-block
+  font-weight: 700
+  margin: 10px 20px
+  padding: 25px 15px
+  width: 25%
+
+  &:hover
+    cursor: pointer
+
+  &:not(.toggle-on):hover
+    background: #69c
+    color: #fff
+    text-shadow: 0 1px 1px #000
+
+  &.toggle-on
+    background: #6cc644
+    color: #fff
+    text-shadow: 0 1px 1px #000
+
+  &:not(.toggle-on)
+    background: #e5f8ec
+    box-shadow: inset 0 0 3px 0 #000
+    

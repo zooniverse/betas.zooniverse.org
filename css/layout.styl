@@ -1,0 +1,29 @@
+html, body
+  font-family: sans-serif
+  margin: 0
+  padding: 0
+
+body
+  border-top: 5px solid #000
+  color: #333
+
+  > .header
+    background: #eee
+    border-bottom: 1px solid #999
+    box-sizing: border-box
+    color: #333
+    height: 32px
+    padding: 2px 0 0 0
+
+    h2, h3
+      margin: 0
+
+  #app
+    @extends .group
+    min-height: 100px
+    text-align: center
+
+label
+  cursor: pointer
+  display: block
+  

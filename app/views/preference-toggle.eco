@@ -1,0 +1,2 @@
+<%- @key.slice(0,1).toUpperCase() + @key.replace(/_/gi, ' ').slice 1 %><br>
+<input type="radio" />

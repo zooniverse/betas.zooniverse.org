@@ -1,0 +1,6 @@
+<% t = require 't7e' %>
+
+<div class="group description">
+  <%- t 'h2', 'description.header' %>
+  <%- t 'p', 'description.details' %>
+</div>
