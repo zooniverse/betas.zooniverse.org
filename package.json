@@ -1,6 +1,6 @@
 {
-  "name": "beta-signups",
-  "version": "0.0.1",
+  "name": "betas.zooniverse.org",
+  "version": "0.1.0",
   "dependencies": {
     "coffee-script": "~1.6.3",
     "zooniverse": "~0.3.15",
@@ -11,6 +11,7 @@
   },
   "scripts": {
     "start": "haw serve --port 3303",
-    "deploy-to-staging": "haw build && publisssh build zooniverse-demo/beta-signups && trash ./build"
+    "deploy-to-staging": "haw build && publisssh build zooniverse-demo/beta-signups && rm -rf ./build",
+    "deploy": "haw build && publisssh ./build zooniverse-static/betas.zooniverse.org && rm -rf ./build"
   }
 }
