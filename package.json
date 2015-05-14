@@ -8,7 +8,8 @@
     "t7e": "~0.2.3",
     "colors": "~0.6.2",
     "publisssh": "~0.2.1",
-    "mongodb": "~2.0"
+    "mongodb": "~2.0",
+    "js-yaml": "~3.3"
   },
   "scripts": {
     "start": "haw serve --port 3303",

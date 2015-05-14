@@ -2,16 +2,15 @@
 colors = require 'colors'
 fs = require 'fs'
 { MongoClient, ObjectID } = require 'mongodb'
+yaml = require 'js-yaml'
 
-# Note the script is destructive.
-# Be sure you save OUTPUT_FILE elsewhere if you wish to keep it's contents.
+OUTPUT_FILE = '/out/beta_users.txt'
 
-OUTPUT_FILE = 'beta_users.txt'
-{ DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST, DB_PORT } = process.env
+CONFIG = yaml.safeLoad fs.readFileSync '/app/config.yml'
 
 fs.openSync OUTPUT_FILE, 'w'
 
-MongoClient.connect "mongodb://#{ DB_USERNAME }:#{ DB_PASSWORD }@#{ DB_HOST }:#{ DB_PORT }/#{ DB_NAME }", (err, db) ->
+MongoClient.connect "mongodb://#{ CONFIG['DB_USERNAME'] }:#{ CONFIG['DB_PASSWORD'] }@#{ CONFIG['DB_HOST'] }:#{ CONFIG['DB_PORT'] }/#{ CONFIG['DB_NAME'] }", (err, db) ->
   if err then throw err
 
   cursor = db.collection('users').find {"preferences.beta_opt_in": "true"}
@@ -20,7 +19,7 @@ MongoClient.connect "mongodb://#{ DB_USERNAME }:#{ DB_PASSWORD }@#{ DB_HOST }:#{
 
   cursor.each (err, doc) ->
     if err
-      console.log "Error: #{ err }".red
+      console.error "Error: #{ err }".red
       process.exit 1
       return
 
