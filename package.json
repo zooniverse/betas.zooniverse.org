@@ -7,11 +7,13 @@
     "haw": "~0.2.12",
     "t7e": "~0.2.3",
     "colors": "~0.6.2",
-    "publisssh": "~0.2.1"
+    "publisssh": "~0.2.1",
+    "mongodb": "~2.0"
   },
   "scripts": {
     "start": "haw serve --port 3303",
     "deploy-to-staging": "haw build && publisssh build zooniverse-demo/beta-signups && rm -rf ./build",
-    "deploy": "haw build && publisssh ./build zooniverse-static/betas.zooniverse.org && rm -rf ./build"
+    "deploy": "haw build && publisssh ./build zooniverse-static/betas.zooniverse.org && rm -rf ./build",
+    "list-subscribers" : "coffee scripts/beta-users.coffee"
   }
 }
